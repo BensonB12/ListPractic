@@ -7,6 +7,99 @@ namespace Listpractice
     {
         static void Main(string[] args)
         {
+            var favriotMoves = new List<string>();
+            favriotMoves.Add("No time to die");
+            favriotMoves.Add("The dark night");
+            foreach (var item in favriotMoves)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+    }
+    // interface is a contianer of requirements that we should have 
+    interface IBook
+    {
+        public bool TableOfContents();
+        public int GetNumberOfPages();
+        public bool CoverPage();
+    }
+    public class HarrayPotter : IBook
+    {
+        private int numberOfPages; 
+        public HarrayPotter(int InNumberOfPages )
+        {
+            numberOfPages = InNumberOfPages;
+        }
+        public int GetNumberOfPages()
+        {
+            return numberOfPages;
+        }
+
+        public bool CoverPage()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public bool TableOfContents()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class StarWars : IBook
+    {
+        public bool CoverPage()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetNumberOfPages()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool TableOfContents()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
             // list 
             var listOFNeeds = new List<string>();
             //adding to list
@@ -22,6 +115,4 @@ namespace Listpractice
             {
             Console.WriteLine(item);
             }
-        }
-    }
-}
+*/
