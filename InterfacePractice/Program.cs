@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Listpractice
+namespace interfacePractice
 {
     class Program
     {
