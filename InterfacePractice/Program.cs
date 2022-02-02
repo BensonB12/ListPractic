@@ -20,50 +20,79 @@ namespace interfacePractice
     // interface is a contianer of requirements that we should have 
     interface IBook
     {
-        public bool TableOfContents();
-        public int GetNumberOfPages();
-        public bool CoverPage();
+        public bool TableOfContents { get; set; }
+
+        public int NumberOfPages { get; set; }
+
+        public bool CoverPage { get; set; }
     }
     public class HarrayPotter : IBook
     {
-        private int numberOfPages; 
+        private int numberOfPages;
+        private bool tableOfContents; 
+        public bool coverPage;
+        public bool TableOfContents
+        {
+            get
+            {
+                return tableOfContents;
+            }
+            set
+            {
+                tableOfContents = value;
+            }
+        }
+         
         public HarrayPotter(int InNumberOfPages )
         {
             numberOfPages = InNumberOfPages;
         }
-        public int GetNumberOfPages()
+        public HarrayPotter()
         {
-            return numberOfPages;
+
+        }
+        public int NumberOfPages
+        {
+            get
+            {
+                return numberOfPages;
+            }
+            set
+            {
+                numberOfPages = value;
+            }
+            
+        }
+        public int AddPages
+        {
+            set
+            {
+                numberOfPages += value; 
+            }
         }
 
-        public bool CoverPage()
+        public bool CoverPage 
         {
-            throw new NotImplementedException();
+            get
+            {
+                return coverPage;
+            }
+            set
+            {
+                coverPage = value;
+            }
         }
 
 
-        public bool TableOfContents()
-        {
-            throw new NotImplementedException();
-        }
     }
-    public class StarWars : IBook
-    {
-        public bool CoverPage()
-        {
-            throw new NotImplementedException();
-        }
+    // public class StarWars : IBook
+    // {
+    //     public bool CoverPage => throw new NotImplementedException();
 
-        public int GetNumberOfPages()
-        {
-            throw new NotImplementedException();
-        }
+    //     public int NumberOfPages => throw new NotImplementedException();
 
-        public bool TableOfContents()
-        {
-            throw new NotImplementedException();
-        }
-    }
+    //     public bool TableOfContents => throw new NotImplementedException();
+    // }
 }
 
 

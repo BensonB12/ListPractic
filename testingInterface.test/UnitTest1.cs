@@ -23,10 +23,23 @@ namespace testingInterface.test
         [Test]
         public void testingHaryPoterPages()
         {
-            var Ston = new HarrayPotter(100);
+            var Ston = new HarrayPotter();
             // int Pages = 100;
-            int Pages = Ston.GetNumberOfPages();
-            Assert.AreEqual(100, Pages);
+            //int Pages = 
+            Ston.NumberOfPages = 100;
+            Assert.AreEqual(100, Ston.NumberOfPages);
+            Ston.AddPages = 20;
+            Assert.AreEqual(120, Ston.NumberOfPages);
         }
+
+        [Test]
+        public void testCoverpage()
+        {
+            var Ston = new HarrayPotter();
+            Assert.AreEqual(false, Ston.CoverPage);
+            Ston.CoverPage = true;
+            Assert.AreEqual(true, Ston.CoverPage);
+        }
+
     }
 }
